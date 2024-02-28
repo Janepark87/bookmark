@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital@0;1&display=swap');
+
+:root {
+	--primary-color: #7c59b0;
+	--border-radius: 5px;
+}
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 2rem 1.5rem;
+	font-family: 'Karla', sans-serif;
+	background-color: var(--primary-color);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cpath fill='%23f9f8fb' fill-opacity='0.4' d='M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v15.95A10 10 0 0 0 23.66 27l-3.46-2 8.2-2.2-2.9 5a12 12 0 0 1-21 0l-2.89-5 8.2 2.2-3.47 2A10 10 0 0 0 14 31.95V16zm40 40h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v15.95A10 10 0 0 0 63.66 67l-3.47-2 8.2-2.2-2.88 5a12 12 0 0 1-21.02 0l-2.88-5 8.2 2.2-3.47 2A10 10 0 0 0 54 71.95V56zm-39 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm40-40a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm40 40a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	font-size: 1.25rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+a:link,
+a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+
+.add-bookmark {
+	width: 100%;
+	max-width: 18rem;
+	padding: 1.25rem;
+	margin: 1.25rem auto 0.625rem;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: var(--border-radius);
+	text-align: center;
+	text-transform: uppercase;
+	transition: background-color 0.3s ease-in-out;
+	user-select: none;
+	cursor: pointer;
+}
+
+.add-bookmark:hover,
+.item:hover {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.item {
+	position: relative;
+	padding: 1.5rem 2rem;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: var(--border-radius);
+	transition: background-color 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.name {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.name img {
+	width: 1.75rem;
+	height: 1.75rem;
+}
+
+#delete-bookmark-btn {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.75rem;
+	font-size: 1rem;
+	z-index: 2;
+	cursor: pointer;
+}
+
+/* Modal */
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 1.5rem;
+	background-color: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(5px);
+	z-index: 999;
+}
+
+.modal.open {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-inner {
+	position: relative;
+	width: 100%;
+	max-width: 31.25rem;
+	background-color: white;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+	animation: modalOpen 1s;
+	border-radius: 6px;
+}
+
+.modal-close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	color: white;
+	font-size: 1.25rem;
+	cursor: pointer;
+}
+
+.modal-header {
+	padding: 1rem;
+	color: white;
+	background-color: var(--primary-color);
+	border-radius: 5px 5px 0 0;
+}
+
+.modal-content {
+	padding: 1.25rem 1rem;
+	background-color: whitesmoke;
+	border-radius: 0 0 5px 5px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+label {
+	color: var(--primary-color);
+}
+
+input {
+	padding: 0.5rem 0.75rem;
+	border-radius: var(--border-radius);
+	border: 1px solid var(--primary-color);
+	outline: none;
+}
+
+.submit-btn {
+	padding: 0.75rem 2rem;
+	margin-top: 1rem;
+	color: white;
+	background-color: var(--primary-color);
+	border-radius: var(--border-radius);
+	border: none;
+	outline: none;
+	transition: filter 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.submit-btn:hover {
+	filter: brightness(110%);
+}
+
+@keyframes modalOpen {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		flex-direction: column;
+	}
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>" />
+
+		<title>Bookmark App</title>
+
+		<!-- Fontawesome -->
+		<script src="https://kit.fontawesome.com/9c51e67353.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div id="modal-trigger" class="add-bookmark">
+			<h1>Add Bookmark</h1>
+		</div>
+
+		<ul id="bookmarks-container" class="container"></ul>
+
+		<div id="modal" class="modal">
+			<div class="modal-inner">
+				<i id="modal-close" class="fas fa-times modal-close"></i>
+
+				<div class="modal-header">
+					<h3>Add Bookmark</h3>
+				</div>
+				<div class="modal-content">
+					<form id="bookmarker-form">
+						<div class="form-group">
+							<label for="name">Website Name</label>
+							<input type="text" id="name" name="name" />
+						</div>
+
+						<div class="form-group">
+							<label for="url">Website URL</label>
+							<input type="text" id="url" name="url" placeholder="https://your-url-address" />
+						</div>
+
+						<button type="submit" class="submit-btn">Save</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- script -->
+		<script src="script.js"></script>
+	</body>
+</html>
