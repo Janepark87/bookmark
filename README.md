@@ -4,7 +4,7 @@
 Bookmark Application is a lightweight JavaScript app that simplifies bookmark management. It includes a user-friendly modal for seamless interaction, efficient form submissions with dynamic updates, and leverages local storage for persistent bookmark data.
 
 ## Demo
-Explore the live demo: [Simple Bookmark App](https://janepark87.github.io/bookmark/)
+Explore the live demo: [Bookmark App](https://janepark87.github.io/bookmark/)
 
 ## Key Functionalities
 
